@@ -1,0 +1,89 @@
+{
+   "setting": {},
+   "condition": {
+      "plugin": {
+         "list": []
+      },
+      "game": {
+         "list": []
+      },
+      "gamePlugin": {
+         "list": []
+      },
+      "miniprogram": {
+         "list": [
+            {
+               "name": "tabbarPages/tabbarPage1/index",
+               "pathName": "tabbarPages/tabbarPage1/index",
+               "query": "",
+               "scene": 1008
+            },
+            {
+               "name": "tabbarPages/tabbarPage1/index",
+               "pathName": "tabbarPages/tabbarPage1/index",
+               "query": "",
+               "scene": 1044,
+               "shareInfo": {
+                  "groupName": "测试模拟群0",
+                  "shareName": "FFcne-w0DMdTdsLhOGy_s6wpAyZiTDYhJ2YXIGk0Vnk@cr4dev",
+                  "shareKey": "IP_a_31bfZ72f1oU_4ZtzooHav-SpP8u02jnT51bGw_2GCQ92ZxXlUS4cdiouVfFm3Jix8N54tp--f1Ytw-7GA~~"
+               }
+            },
+            {
+               "name": "撩一撩",
+               "pathName": "pages/flirt/index",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "群主录入信息",
+               "pathName": "pages/user-basic-info-q/index",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "活动",
+               "pathName": "tabbarPages/tabbarPage3/index",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "活动详情",
+               "pathName": "pages/activity-details/index",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "用户详情",
+               "pathName": "pages/user-details/index",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "我的",
+               "pathName": "tabbarPages/tabbarPage4/index",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "实名认证",
+               "pathName": "pages/smrz/index",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "我的资料",
+               "pathName": "pages/my-details/index",
+               "query": "",
+               "scene": null
+            },
+            {
+               "name": "登录",
+               "pathName": "pages/login/index",
+               "query": "",
+               "scene": null
+            }
+         ]
+      }
+   }
+}

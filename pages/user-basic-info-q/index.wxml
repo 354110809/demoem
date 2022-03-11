@@ -1,0 +1,167 @@
+<!--pages/user-basic-info-q/index.wxml-->
+<!-- 群主信息录入页 -->
+<!-- 截图组件 -->
+<cutting_model id="cutting_model" style="width: 100%;height: 100%;"></cutting_model>
+
+<view class="editInfoQPage {{isPageScroll?'':'ovh'}}" >
+   <view class="body">
+      <!-- 头像区域 -->
+      <view class="portrait">
+         <view wx:if="{{!portraitSrc}}" class="bj" bindtap="selectPicFun">
+            <image class="image" src="../../images/userTypeSelect/2.jpg" ></image>
+            <text class="text">上传头像</text>
+         </view>
+         <image wx:else class="image" src="{{portraitSrc}}" bindtap="selectPicFun" catch:longpress="seePortrait"></image>
+      </view>
+      
+      <view class="title_box">填写个人资料</view>
+      <!-- 昵称 -->
+      <view class="line_box">
+         <view class="line_box_label">昵称</view>
+         <view class="line_box_inner input_box">
+            <input class="input" type="text" data-key="nickname" placeholder="请输入昵称" placeholder-class="inputP" maxlength="10" value="{{nickname}}" bindinput="bindinputChange"/>
+         </view>
+      </view>
+      <!-- 性别 -->
+      <view class="line_box">
+         <view class="line_box_label">性别</view>
+         <view class="line_box_inner picker_box">
+            <picker bindchange="bindPickerChange" data-key="pickerCurGender" value="{{pickerCurGender}}" range="{{pickerArrGender}}">
+               <view class="notPicker" wx:if="{{pickerCurGender == -1}}">请选择</view>
+               <view class="picker" wx:else>{{pickerArrGender[pickerCurGender]}}</view>
+            </picker>
+         </view>
+      </view>
+      <!-- 居住地 -->
+      <view class="line_box">
+         <view class="line_box_label">居住地</view>
+         <view class="line_box_inner picker_box">
+            <picker mode="region" data-key="placeResidenceCur" bindchange="bindPickerChange" value="{{placeResidenceCur}}">
+               <view class="notPicker" wx:if="{{placeResidenceCur[2] == ''}}">请选择</view>
+               <view class="picker" wx:else>
+                  {{placeResidenceCur[0]}} {{placeResidenceCur[1]}} {{placeResidenceCur[2]}}
+               </view>
+         </picker>
+         </view>
+      </view>
+      <!-- 学历 -->
+      <view class="line_box">
+         <view class="line_box_label">学历</view>
+         <view class="line_box_inner picker_box">
+            <picker bindchange="bindPickerChange" data-key="pickerCurEducation" value="{{pickerCurEducation}}" range="{{pickerArrEducation}}">
+               <view class="notPicker" wx:if="{{pickerCurEducation == -1}}">请选择</view>
+               <view class="picker" wx:else>{{pickerArrEducation[pickerCurEducation]}}</view>
+            </picker>
+         </view>
+      </view>
+      <!-- 毕业院校 -->
+      <view class="line_box">
+         <view class="line_box_label">毕业院校</view>
+         <view class="line_box_inner input_box">
+            <input class="input" type="text" data-key="school" placeholder="请输入毕业院校" placeholder-class="inputP" maxlength="20" value="{{school}}" bindinput="bindinputChange"/>
+         </view>
+      </view>
+      <!-- 真实姓名 -->
+      <view class="line_box">
+         <view class="line_box_label">真实姓名</view>
+         <view class="line_box_inner input_box">
+            <input class="input" type="text" data-key="name" placeholder="请输入姓名" placeholder-class="inputP" maxlength="10" value="{{name}}" bindinput="bindinputChange"/>
+         </view>
+      </view>
+      <!-- 生日 -->
+      <view class="line_box">
+         <view class="line_box_label">生日</view>
+         <view class="line_box_inner picker_box">
+            <picker mode="date" data-key="birthday"
+             value="{{birthday}}" start="1970-01-01" end="{{birthdayEndDate}}" bindchange="bindPickerChange">
+               <view class="notPicker" wx:if="{{birthday == ''}}">请选择</view>
+               <view class="picker" wx:else>{{birthday}}</view>
+            </picker>
+         </view>
+      </view>
+      <!-- 婚姻状态 -->
+      <view class="line_box">
+         <view class="line_box_label">婚姻状态</view>
+         <view class="line_box_inner picker_box">
+            <picker bindchange="bindPickerChange" data-key="pickerCurMarriage" value="{{pickerCurMarriage}}" range="{{pickerArrMarriage}}">
+               <view class="notPicker" wx:if="{{pickerCurMarriage == -1}}">请选择</view>
+               <view class="picker" wx:else>{{pickerArrMarriage[pickerCurMarriage]}}</view>
+            </picker>
+         </view>
+      </view>
+      <!-- 职业 -->
+      <view class="line_box">
+         <view class="line_box_label">职业</view>
+         <view class="line_box_inner picker_box">
+            <picker bindchange="bindPickerChange" data-key="pickerCurOccupation" value="{{pickerCurOccupation}}" range="{{pickerArrOccupation}}">
+               <view class="notPicker" wx:if="{{pickerCurOccupation == -1}}">请选择</view>
+               <view class="picker" wx:else>{{pickerArrOccupation[pickerCurOccupation]}}</view>
+            </picker>
+         </view>
+      </view>
+      <!-- 公司 -->
+      <view class="line_box">
+         <view class="line_box_label">公司</view>
+         <view class="line_box_inner input_box">
+            <input class="input" type="text" data-key="company" placeholder="请输入公司名称" placeholder-class="inputP" maxlength="20" value="{{company}}" bindinput="bindinputChange"/>
+         </view>
+      </view>
+      <!-- 家乡 -->
+      <view class="line_box">
+         <view class="line_box_label">家乡</view>
+         <view class="line_box_inner picker_box">
+            <picker mode="multiSelector" data-key="hometownMultiIndex" data-arr="hometownMultiArray"  bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{hometownMultiIndex}}" range="{{hometownMultiArray}}">
+                  <view class="notPicker" wx:if="{{hometownMultiIndex[0] == -1}}">请选择</view>
+                  <view class="picker" wx:else>
+                  {{hometownMultiArray[0][hometownMultiIndex[0]]}}{{hometownMultiArray[1][hometownMultiIndex[1]]}}
+               </view>
+            </picker>
+         </view>
+      </view>
+      <!-- 户口所在地 -->
+      <view class="line_box">
+         <view class="line_box_label">户口所在地</view>
+         <view class="line_box_inner picker_box">
+            <picker mode="multiSelector" data-key="householdMultiIndex" data-arr="householdMultiArray" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{householdMultiIndex}}" range="{{householdMultiArray}}">
+                  <view class="notPicker" wx:if="{{householdMultiIndex[0] == -1}}">请选择</view>
+                  <view class="picker" wx:else>
+                  {{householdMultiArray[0][householdMultiIndex[0]]}}{{householdMultiArray[1][householdMultiIndex[1]]}}
+               </view>
+            </picker>
+         </view>
+      </view>
+      <!-- 祖籍 -->
+      <view class="line_box">
+         <view class="line_box_label">祖籍</view>
+         <view class="line_box_inner picker_box">
+            <picker mode="multiSelector" data-key="multiIndex" data-arr="multiArray" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+                  <view class="notPicker" wx:if="{{multiIndex[0] == -1}}">请选择</view>
+                  <view class="picker" wx:else>
+                  {{multiArray[0][multiIndex[0]]}}{{multiArray[1][multiIndex[1]]}}
+               </view>
+            </picker>
+         </view>
+      </view>
+      <!-- 购房 -->
+      <view class="line_box">
+         <view class="line_box_label">购房</view>
+         <view class="line_box_inner picker_box">
+            <picker bindchange="bindPickerChange" data-key="pickerCurHouse" value="{{pickerCurHouse}}" range="{{pickerArrHouseVehicle}}">
+               <view class="notPicker" wx:if="{{pickerCurHouse == -1}}">请选择</view>
+               <view class="picker" wx:else>{{pickerArrHouseVehicle[pickerCurHouse]}}</view>
+            </picker>
+         </view>
+      </view>
+      <!-- 购车 -->
+      <view class="line_box">
+         <view class="line_box_label">购车</view>
+         <view class="line_box_inner picker_box">
+            <picker bindchange="bindPickerChange" data-key="pickerCurVehicle" value="{{pickerCurVehicle}}" range="{{pickerArrHouseVehicle}}">
+               <view class="notPicker" wx:if="{{pickerCurVehicle == -1}}">请选择</view>
+               <view class="picker" wx:else>{{pickerArrHouseVehicle[pickerCurVehicle]}}</view>
+            </picker>
+         </view>
+      </view>
+      <view class="line-box-btn" >提交资料</view>
+   </view>
+</view>

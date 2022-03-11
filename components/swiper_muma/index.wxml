@@ -1,0 +1,16 @@
+<view class='swiperBow'>
+    <swiper class='swiperClass' indicator-dots indicator-color="#dcdcdc" indicator-active-color="#ffdb66" autoplay="{{swiperObject.autoplay}}" interval="{{swiperObject.interval}}" duration="{{swiperObject.duration}}" previous-margin="20px" next-margin="20px" circular catchtap='goToDetail' bindchange="bindchange" style='height: {{swiperObject.swiperHeight}}px'>
+        <block wx:for="{{swiperObject.imgArr}}" wx:key="index">
+            <swiper-item>
+                <image src="{{item}}" data-index='{{index}}'  class="slide-image {{swiperObject.swiperIndex == index ? 'active' : 'quiet'}}" mode='aspectFill'>
+                </image>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <!-- <view class="indicatorBox">
+        <block wx:for="{{swiperObject.imgArr}}" wx:key="{{index}}">
+            <view class="{{swiperObject.swiperIndex == index ? 'active' : 'quiet'}}"></view>
+        </block>
+    </view> -->
+</view>

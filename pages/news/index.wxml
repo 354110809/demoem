@@ -1,0 +1,35 @@
+<!--tabbarPages/news/index.wxml-->
+<!-- 消息 -->
+<wxs src="../../utils/filter.wxs" module="filter" />
+
+<view class="newsPage defaultPage">
+   <view class="body">
+      <!-- 系统消息 -->
+      <view class="message-system message">
+         <view class="icon-pic">
+            <image src="../../images/news/icon_1.jpg" mode="aspectFill"></image>
+         </view>
+         <view class="info">
+            <view class="name">[通知] 您已成功加入二院相亲群您已成功加入二院相亲群</view>
+            <view class="time">2021-11-20</view>
+         </view>
+      </view>
+      <!-- 私聊消息 -->
+      <view class="message-list">
+         <view wx:for="{{10}}" wx:key="index" class="message-item message" bindtap="goChat">
+            <view class="icon-pic">
+               <view class="badge">1</view>
+               <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1114%2F060421091316%2F210604091316-6-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1640314171&t=a278e6f23662fc454c47aeb9bb284c49" mode="aspectFill"></image>
+            </view>
+            <view class="info">
+               <view class="nameTime">
+                  <view class="name">王二妞王二妞王二妞王二妞王二妞王二妞王二妞</view>
+                  <view class="time">{{filter.getBeforeDateSection('2021-11-24 12:20') }}</view>
+               </view>
+               <view class="text">很高兴认识你啊很高兴认识你啊</view>
+            </view>
+         </view>
+      </view>
+   </view>
+</view>
+

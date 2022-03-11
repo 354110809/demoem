@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "top_model": "/components/top_model/index"
+  },
+  "navigationBarTitleText":"活动"
+}

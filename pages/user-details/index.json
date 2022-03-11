@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "evaluate_model": "/components/evaluate_model/index",
+    "page_head": "/components/page_head/index"
+  }
+}

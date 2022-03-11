@@ -1,0 +1,19 @@
+<!--components/top_model/index.wxml-->
+<!-- <view class="top_model {{showShadow?'shadow':''}}" style="top:{{barHeight}}px"> -->
+<view class="top_model {{showShadow?'shadow':''}}">
+   <!-- 输入框 -->
+   <view class="inp-box">
+      <view class="input-icon">
+         <image class="image" src='../../images/index/1.jpg'></image>
+      </view>
+      <input class="input" placeholder-class="inputP" cursor-spacing="50" type="text" confirm-type="发送" placeholder="搜索活动名称、群名称、用户" bindfocus="inputfocusFun" bindinput="inputFun" value="{{inputVal}}"/>
+   </view>
+   <!-- 扫码 -->
+   <view class="scancode icon" bindtap="saoyisao">
+      <image class="image" src='../../images/index/2.jpg'></image>
+   </view>
+   <!-- 消息 -->
+   <view class="news icon" bindtap="goChat">
+      <image class="image" src='../../images/index/3.jpg'></image>
+   </view>
+</view>

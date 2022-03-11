@@ -1,0 +1,73 @@
+// 获取时间区间
+var getBeforeDateSection = function(time){
+
+    // 1.获取传入时间
+    var AfferentTime = getDate(time).getTime();      // 时间戳
+    var AfferentYear = getDate(time).getFullYear();  // 年
+    var AfferentMonth = getDate(time).getMonth()+1;  // 月
+    var AfferentDate = getDate(time).getDate();      // 天
+    var AfferentHours = getDate(time).getHours();    // 时
+    var AfferentMinutes = getDate(time).getMinutes();// 分
+    
+    // 2.获取当前时间
+    var NewTime = getDate().getTime();      // 时间戳
+    var NewYear = getDate().getFullYear();  // 年
+    var NewMonth = getDate().getMonth()+1;  // 月
+    var NewDate = getDate().getDate();      // 天
+    var NewHours = getDate().getHours();    // 时
+    var NewMinutes = getDate().getMinutes();// 分
+
+    // 3 验证是否为今天
+    if( getDate(time).toDateString() === getDate().toDateString() ){
+        return (AfferentHours<10?'0'+AfferentHours : AfferentHours) +':'+(AfferentMinutes<10?'0'+AfferentMinutes:AfferentMinutes); 
+    }
+
+    // 4 验证是否为昨天
+    if( isBeforeday( AfferentTime, getDate(NewYear+'/'+NewMonth+'/'+NewDate).getTime() , 1 ) ){
+        return '昨天'
+    }
+    
+    // 5 验证是否为前天
+    if( isBeforeday( AfferentTime, getDate(NewYear+'/'+NewMonth+'/'+NewDate).getTime() , 2 ) ){
+        return '前天'
+    }
+
+    // 6 验证是否为明天
+    if( isAfterday( AfferentTime, getDate(NewYear+'/'+NewMonth+'/'+NewDate).getTime() , 1 ) ){
+        return '明天'
+    }
+    
+    // 7 验证是否为后天
+    if( isAfterday( AfferentTime, getDate(NewYear+'/'+NewMonth+'/'+NewDate).getTime() , 2 ) ){
+        return '后天'
+    }
+
+    // 验证是否为同一年
+    // if(BeforeYear === NewYear ){
+    //     return BeforeMonth+'月'+BeforeDate+'日'
+    // }else{
+    //     return BeforeYear+'年'+BeforeMonth+'月'+BeforeDate+'日'
+    // }
+
+    if(AfferentTime < NewTime){
+        return '两天前'+AfferentMonth+'月'+AfferentDate+'日'
+    }
+    if(AfferentTime > NewTime){
+        return '两天后'+AfferentMonth+'月'+AfferentDate+'日'
+    }
+}
+// 验证之前时间
+function isBeforeday(BeforeTime , today , day ) {
+   var yesterdayTime = getDate(today - 24 * 60 * 60 * 1000 * day).getTime();
+   return BeforeTime < today && yesterdayTime <= BeforeTime;
+}
+// 验证之后时间
+function isAfterday(AfterTime , today , day ) {
+    var Afterday1 = getDate(today + 24 * 60 * 60 * 1000 * day).getTime()
+    var Afterday2 = getDate(today + 24 * 60 * 60 * 1000 * (day+1)).getTime();
+    return AfterTime >= Afterday1 && Afterday2 > AfterTime;
+}
+
+module.exports = {
+    getBeforeDateSection:getBeforeDateSection,
+}

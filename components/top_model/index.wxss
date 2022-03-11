@@ -1,0 +1,65 @@
+/* components/top_model/index.wxss */
+.top_model{
+   position:sticky;
+   top:0;
+   left:0;
+   background: #fff;
+   height:54px;
+   display: flex;
+   box-sizing: border-box;
+   padding:9px 18px;
+   padding-right: 10px;
+   z-index: 10;
+}
+.shadow{
+   box-shadow: 0 1px 2px #eff4f7;
+}
+.top_model .inp-box{
+   flex-grow: 1;
+   background:#f6f6f9;
+   height:36px;
+   border-radius: 20px;
+   box-sizing: border-box;
+   padding:0 15px 0 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-right: 4px;
+}
+.top_model .inp-box .input-icon{
+   flex:none;
+   width:36px;
+   height:36px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.top_model .inp-box .input-icon .image{
+   width:20px;
+   height: 20px;
+   display: block;
+}
+.top_model .inp-box .input{
+   flex-grow: 1;
+   font-size: 11pt;
+   height:100%;
+   line-height: 36px;
+   color:#75737c;
+}
+.top_model .inp-box .inputP{
+   color:#C9C4D8;
+}
+
+.top_model .icon{
+   flex:none;
+   width:36px;
+   height:36px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.top_model .icon .image{
+   width:32px;
+   height: 32px;
+   display: block;
+}

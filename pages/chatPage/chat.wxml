@@ -1,0 +1,69 @@
+<view class="chatPage">
+   <!-- 信息区域 -->
+   <view class="infoModel">
+      <view wx:for="{{chatList}}" wx:key="index">
+         <view>
+            <image src="{{item.pic}}"></image>
+            <text>{{item.type}}</text>
+         </view>
+         <text>{{item.text}}</text>
+      </view>
+   </view>
+   <!-- 聊天工具区域 -->
+   <view class="toolModel">
+      <!-- 输入方式切换 -->
+      <view class="switchMode" bindtap="switchMode">
+         <image mode="aspectFit" class="image imageK" hidden="{{inputMode === 'phone'}}" src="../../images/chat/icon-key.png"></image>
+         <image mode="aspectFit" class="image imageP" hidden="{{inputMode === 'key'}}" src="../../images/chat/icon-microphone.png"></image>
+      </view>
+      <!-- 输入方式 -->
+      <view class="inputArea {{inputMode === 'key'?'modeKey':''}}">
+         <!-- 输入框 -->
+         <view class="textarea-wrp">
+            <textarea  disabled="{{inputMode === 'key'}}" class="textarea" placeholder-class="textareaP" maxlength="150" show-confirm-bar="{{false}}" cursor-spacing="20" placeholder='请输入聊天信息' bindinput="inputFun" auto-height value="{{textareaStr}}"/>
+         </view>
+         <!-- 录音 -->
+         <view class="recording" catch:longpress="handleRecordStart" catch:touchmove="handleTouchMove"  catch:touchend="handleRecordStop"  wx:if="{{inputMode === 'key'}}">
+            长按说话
+         </view>
+      </view>
+      <!-- 发送按钮 -->
+      <view class="sendout {{inputMode === 'phone'?'df':'dn'}} sendoutY" bindtap="fasong">发送</view>
+      <!-- <view class="sendout {{inputMode === 'phone'?'df':'dn'}} {{textareaStr.length>1?'sendoutY':''}}" bindtap="fasong">发送</view> -->
+   </view>
+   <!-- 录音模块 -->
+   <view class="recordingModel" hidden="{{!isShowSoundRecordingBox}}">
+      <view class="inner">
+         <view class="recordingBox" >
+            <view class="anm">
+               <view class="anm-li {{isAuditionAnimation?'state':''}}" wx:for="{{15}}" wx:key="index" ></view>
+            </view>
+            <view class="text" hidden="{{!isSoundRecording}}">正在说活</view>
+         </view>
+      
+
+         <view class="recordingBtntool">
+            <!-- 删除退出录音 -->
+            <view  bindtap="cancelSendingRecording" >
+               <image mode="aspectFill"class="btn" src="../../images/chat/icon-delect.png" alt=""/>
+               <text>删除</text>
+            </view>
+            <!-- 试听录音 -->
+            <view hidden="{{isSoundRecording}}" catch:longpress="playRecordingFun"  catch:touchend="stopRecordingFun">
+               <image class="btn" mode="aspectFill"  class="btn" src="../../images/chat/icon-audition.png" alt=""/>
+               <text>{{isplayAudition?'松开停止':'长按试听'}}</text>
+            </view>
+            <!-- 发送录音 -->
+            <view bindtap="confirmSendingRecording" >
+               <image mode="aspectFill" class="btn" src="../../images/chat/icon-sendOut.png" alt=""/>
+               <text>发送</text>
+            </view>
+         </view>
+         
+         <view class="recordingBottom">
+            <text class="text" hidden="{{!isSoundRecording}}">松开结束说话</text>
+         </view>
+      </view>
+      
+   </view>
+</view>

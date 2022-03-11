@@ -1,0 +1,40 @@
+.swiperBow {
+    background: #fff;
+}
+
+.swiperBow .swiperClass .slide-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+.swiperBow .swiperClass .active {
+    transform: scale(1);
+    transition: all 0.2s 0s;
+}
+.swiperBow .swiperClass .quiet {
+    transform: scale(0.92);
+    transition: all 0.2s 0s;
+}
+
+/* .swiperBow .indicatorBox {
+    width:100%;
+    height:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:8px 0;
+}
+.swiperBow .indicatorBox>view{
+    width:8px;
+    height:8px;
+    background: #dcdcdc;
+    border-radius: 4px;
+    margin:0 2px;
+    transition: all 0.2s 0s;
+}
+.swiperBow .indicatorBox>view.active{
+    background: #ffdb66;
+    width:18px;
+} */

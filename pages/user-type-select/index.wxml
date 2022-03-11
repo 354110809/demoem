@@ -1,0 +1,16 @@
+<!--pages/user-type-select/index.wxml-->
+<!-- 用户类型选择 -->
+<!-- <navigator open-type='navigate' url="../user-basic-info-q/index">群主信息采集</navigator> -->
+<!-- <navigator open-type='switchTab' url="../../tabbarPages/index/index">去首页</navigator> -->
+<view class="user-type-selectPage">
+   <view class="inner">
+      <view class="inner-model">
+            <image class="title-pic" mode="widthFix" src="../../images/userTypeSelect/1.jpg"></image>
+      </view>
+
+      <view class="tipText">根据监管平台要求，群主入驻平台需采集部分个人信息</view>
+
+      <view class="inp-box-btn">我是群主</view>
+      <view class="inp-box-btn cur">我要寻找爱人</view>
+   </view>
+</view>

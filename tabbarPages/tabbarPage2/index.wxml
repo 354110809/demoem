@@ -1,0 +1,43 @@
+<!--tabbarPages/corner/index.wxml-->
+<view class="tabbar2Page tabbarPage">
+   <!-- 群聚 -->
+   <!-- 顶部内容 -->
+   <top_model></top_model>
+   <!-- 内容部分 -->
+   <view class="body">
+      <!-- {{userType == 0?'c端':'群主'}} -->
+      <!-- c端用户 -->
+      <view wx:if="{{userType == 0}}" class="inner innerC">
+         <view class="item" wx:for="{{5}}" wx:key="index">
+            <view class="groupInfo">
+               <view class="group-pic">
+                  <image wx:if="{{index%2 == 0}}" src="https://img2.baidu.com/it/u=2761317825,1023537553&fm=26&fmt=auto" mode="aspectFill"></image>
+                  <image wx:else src="https://img1.baidu.com/it/u=1129915480,548838391&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" mode="aspectFill"></image>
+                  <view>群主</view>
+               </view>
+               <view class="group-text">
+                  <view class="group-text-name"><view>这是个群名称名称</view><text>(300人)</text></view>
+                  <view class="praiseDeg">
+                  <text>好评度</text><evaluate_model level="3" /></view>
+               </view>
+               <view class="group-btn {{index%3>0?'cur':''}}" wx:if="{{index%3>0}}">已加入</view>
+               <view class="group-btn" wx:else>申请入群</view>
+            </view>
+            <view class="groupMember">
+               <view class="group-member-info" wx:for="{{8}}" wx:key="index"  bindtap="seeDetails">
+                  <image mode="aspectFill" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ftupian.qqw21.com%2Farticle%2FUploadPic%2F2020-5%2F202051816433192999.jpg&refer=http%3A%2F%2Ftupian.qqw21.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1640237298&t=6e29452a17afa0bfa91a53a95beb0100"></image>
+                  <view class="infoMn infoText">胡可小乔 | 38</view>
+                  <view class="infoZx infoText">幼师 | 清华附小</view>
+               </view>
+            </view>
+            <view class="groupBtn">
+               <view class="btn"></view>
+            </view>
+         </view>
+      </view>
+      <!-- 群主用户 -->
+      <view wx:if="{{userType == 1}}" class="inner innerQ">
+         <view class="item" wx:for="{{5}}" wx:key="index">{{index}}</view>
+      </view>
+   </view>
+</view>

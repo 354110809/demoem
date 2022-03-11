@@ -1,0 +1,15 @@
+<!--components/evaluate/indexl.wxml-->
+<view class="evaluateModel">
+   <!-- 默认展示 选中与未选中星级 -->
+   <block wx:if="{{showType==1}}">
+      <view class="item {{index < level ? 'cur':''}}" wx:for="{{5}}" wx:key="index"></view>
+   </block>
+   <!-- 只展示 选中 -->
+   <block wx:if="{{showType==2}}">
+      <view class="item cur" wx:for="{{level}}" wx:key="index"></view>
+   </block>
+   <!-- 默认不选中 -->
+   <block wx:if="{{showType==3}}">
+      <view class="item {{index < curLevel ? 'cur':''}}" wx:for="{{5}}" wx:key="index" catch:tap="clickLevelFun" data-index="{{index}}"></view>
+   </block>
+</view>

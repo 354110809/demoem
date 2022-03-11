@@ -1,0 +1,14 @@
+/* components/page_head/index.wxss */
+.pageHead{
+   position:sticky;
+   top:0;
+   left:0;
+   z-index: 11;
+   width:100vw;
+   background:#fff;
+   background:red;
+   box-sizing: border-box;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}

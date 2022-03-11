@@ -1,0 +1,35 @@
+/* pages/user-type-select/index.wxss */
+.user-type-selectPage{
+   width:100vw;
+}
+.user-type-selectPage .inner .inner-model{
+   margin-bottom: 40px;
+}
+.user-type-selectPage .inner .inner-model image{
+   width:100%;
+   display: block;
+}
+.user-type-selectPage .inner .tipText{
+   color:#9D7F77;
+   font-size: 10pt;
+   display: block;
+   margin-bottom: 20px;
+   text-align: center;
+}
+.user-type-selectPage .inner .inp-box-btn{
+   color:#fff;
+   width:74.4vw;
+   height:54px;
+   margin:0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 12.75pt;
+   font-weight: 600;
+   background: linear-gradient(266.37deg, #FB3A74 -14.53%, #FF6230 113.67%);
+   border-radius: 72px;
+   margin-bottom: 30px;
+}
+.user-type-selectPage .inner .inp-box-btn.cur{
+   background: linear-gradient(92.41deg, #7879F1 8.47%, #C378F1 90.29%);
+}

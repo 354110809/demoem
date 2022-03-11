@@ -1,0 +1,33 @@
+<!--pages/login/index.wxml-->
+<view class="loginPage" hidden="{{!showloginPage}}">
+    <view class="inner">
+        <view class="inner-model">
+            <image class="title-pic" mode="widthFix" src="../../images/login/title-pic.png"></image>
+            <image class="text-pic" mode="widthFix" src="../../images/login/text-pic.png"></image>
+            <image class="R-C-pic" mode="widthFix" src="../../images/login/R-C.png"></image>
+        </view>
+        <!-- 手机号 -->
+        <view class="inp-box phone">
+            <view class="input-icon">
+                <image src='../../images/login/1.png'></image>
+            </view>
+            <input placeholder-class="inputP" data-title="phone" maxlength="11" type="number" cursor-spacing="50" placeholder="请输入手机号码" bindfocus="inputfocusFun" bindinput="inputFun" value="{{phoneVal}}"/>
+        </view>
+        <!-- 验证码 -->
+        <view class="inp-box code">
+                <view class="input-icon">
+                    <image src='../../images/login/4.png'></image>
+                </view>
+                <input placeholder-class="inputP" data-title="code" maxlength="6" type="number" cursor-spacing="50" placeholder="请输入验证码" bindfocus="inputfocusFun" bindinput="inputFun"/>
+                <view class="code-btn {{codeText!='获取验证码'?'cur':''}}" bindtap="getCodeFun">{{codeText}}</view>
+        </view>
+        <view class="tipText">未注册的手机号验证后自动获得初心账号</view>
+        
+        <!-- 登录btn -->
+        <view class="inp-box-btn" bindtap="SignInFun">加入初心</view>
+
+        <view class="inp-box-pact">
+            <view class="pact_0" >登录即同意</view><navigator open-type='navigate' url="../user-agreement/index" hover-class='pact_1Hover'>用户协议</navigator>
+        </view>
+    </view>
+</view>

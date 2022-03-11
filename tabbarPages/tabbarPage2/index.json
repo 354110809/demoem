@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "top_model": "/components/top_model/index",
+    "evaluate_model": "/components/evaluate_model/index"
+  },
+  "navigationBarTitleText":"群聚"
+}

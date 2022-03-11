@@ -1,0 +1,84 @@
+<!--pages/activity-details/index.wxml-->
+<!-- <text>活动详情</text> -->
+<view class="activityDetails">
+   <!-- 活动基本信息 -->
+   <view class="model model1">
+      <image class="image" src="https://img0.baidu.com/it/u=2133937396,3436019980&fm=26&fmt=auto" mode="aspectFill"></image>
+      <view class="hd_name">【官方】丽思卡尔顿之夜 在冬日的欢乐时光里遇见你 欢乐PARTY 不见不散</view>
+      <view class="hd_info">
+         <view class="info_left">
+            <view>
+               <text class="label">时间</text>
+               <text class="text">11-25 11:30 到 11-24 17:30</text>
+            </view>
+            <view>
+               <text class="label">地点</text>
+               <text class="text">北京 朝阳区 国贸丽思卡尔顿酒店店店店店店店店店</text>
+            </view>
+            <view class="jg">
+               <text class="label">价格</text>
+               <text class="text">680/人</text>
+            </view>
+         </view>
+         <view class="info_right">
+            <view class="text">组织者</view>
+            <view class="info" bindtap="seeDetails">
+               <image class="image" src="https://img2.baidu.com/it/u=2761317825,1023537553&fm=26&fmt=auto" mode="aspectFill"></image>
+               <view>组织者组织者组织者</view>
+            </view>
+         </view>
+      </view>
+   </view>
+   <!-- 活动成员 -->
+   <view class="model model2">
+      <view class="model_head">
+         <view class="ybmcy"><text>已报名成员</text>({{hd_memberList.length}}/50)</view>
+         <view wx:if="{{hdStatus}}" class="yqdnum">签到人数：2人</view>
+      </view>
+      <view class="model_body">
+         <!-- 活动成员 -->
+         <view class="cy_item" wx:for="{{hd_memberList}}" wx:key="index" wx:if="{{  hd_memberList.length == 14 && index == 13 && !isShowhdCy || !isShowhdCy && index < 13 || isShowhdCy  }}" bindtap="seeDetails">
+            <view class="pic">
+               <image class="image" src="{{item.cySrc}}" mode="aspectFill"></image>
+               <view wx:if="{{item.signinStatus}}">已签到</view>
+            </view>
+            <text>{{item.cyName}}</text>
+         </view>
+         <!-- 活动成员展开按钮 -->
+         <view class="cy_item cy_btn" wx:if="{{hd_memberList.length > 14 && !isShowhdCy}}" bindtap="openHdCyList">
+            <view class="image">
+               <view></view>
+            </view>
+            <text>展开</text>
+         </view>
+      </view>
+   </view>
+   <!-- 活动介绍 -->
+   <view class="model model3">
+      <view class="model_head">
+         <text>活动介绍</text>
+      </view>
+      <view class="model_body">
+         <rich-text nodes="{{htmlSnip}}"></rich-text>
+      </view>
+   </view>
+   <!-- 推荐活动 -->
+   <view class="model model4 pbv24">
+      <view class="model_head">
+         <text>推荐活动</text>
+      </view>
+      <view class="model_body">
+         <view class="model_item_tj" wx:for="{{6}}" wx:key="index" bindtap="seeTjHdDetails">
+            <image class="image" src="https://img0.baidu.com/it/u=2133937396,3436019980&fm=26&fmt=auto" mode="aspectFill"></image>
+            <view class="tjhd_name">推荐活动的名称推荐活动的名称推荐活动的名称推荐活动的名称推荐活动的名称</view>
+         </view>
+      </view>
+   </view>
+   <!-- 报名活动按钮 -->
+   <view class="model-foter">
+      <view class="xy">
+         <view class="{{isXyStatus?'cur':''}}" bindtap="clickXyFun">我已同意</view><navigator open-type='navigate' url="../user-agreement/index" hover-class='pact_1Hover'>《免责条款》</navigator>
+      </view>
+      <view class="release-btn">报名活动</view>
+   </view>
+</view>

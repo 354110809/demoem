@@ -1,0 +1,91 @@
+/* pages/flirt/index.wxss */
+.body{
+   padding-top: 12px;
+}
+
+.item{
+   padding:15px 12px;
+   background:#fff;
+   display: flex;
+   width:100%;
+   box-sizing: border-box;
+   border-radius: 8px;
+   margin-bottom: 10px;
+}
+.item .icon-pic{
+   flex:none;
+   padding-right: 12px;
+}
+.item .icon-pic image{
+   border-radius: 50%;
+   width:36px;
+   height:36px;
+   display: block;
+}
+
+.item .info{
+   width:calc( 100% - 48px );
+   display: flex;
+   flex-direction: column;
+   justify-content:space-around;
+}
+.item .info .line-name{
+   flex-grow: 1;
+   display: flex;
+   align-items: flex-end;
+   color:#232832;
+   font-weight: 500;
+   margin-bottom: 10px;
+}
+.item .info .line-name .name{
+   font-size: 11.25pt;
+   overflow: hidden;
+   white-space: nowrap;
+   /*不换行*/
+   text-overflow: ellipsis;
+}
+.item .info .line-name .age{
+   font-size: 9pt;
+   margin:0 5px;
+   flex: none;
+}
+.item .info .line-name .btn{
+   background: linear-gradient(266.37deg, #FB3A74 -14.53%, #FF6230 113.67%);
+   border-radius: 15px;
+   height:24px;
+   flex: none;
+   width:54px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color:#fff;
+   font-size: 9pt;
+   margin-left: auto;
+}
+
+
+.item .info .label{
+   white-space: nowrap;
+   overflow-x: auto;
+   margin-bottom: 10px;
+}
+.item .info .label text{
+   display: inline-block;
+   background: rgba(252, 221, 236, 0.4);
+   border-radius: 2px;
+   padding: 2px 6px;
+   color:#FB605F;
+   font-size:8pt;
+   margin-right: 8px;
+}
+.item .info .label text:last-child{
+   margin-right: 0;
+}
+.item .info .text{
+   font-size: 10.5pt;
+   color:#111111;
+   overflow: hidden;
+	text-overflow: ellipsis;	
+	white-space: nowrap; 
+}
+

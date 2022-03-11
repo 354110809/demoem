@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "top_model": "/components/top_model/index",
+        "page_head": "/components/page_head/index"
+    },
+    "navigationBarTitleText":"初见"
+}

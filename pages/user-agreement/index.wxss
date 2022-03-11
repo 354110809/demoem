@@ -1,0 +1,24 @@
+/* pages/user-agreement/index.wxss */
+.userAgeMentPage{
+   padding:10px 15px;
+   font-size: 10.5pt;
+}
+.h1{}
+.p{
+   text-indent: 1em;
+   color:#000;
+   margin-bottom: 10px;
+   line-height: 20px;
+}
+.btnXY{
+   width:70%;
+   margin:0 auto;
+   background: linear-gradient(266.37deg, #FB3A74 -14.53%, #FF6230 113.67%);
+   border-radius: 72px;
+   text-align: center;
+   height:50px;
+   line-height: 50px;
+   color:#fff;
+   font-weight: 600;
+   font-size: 11pt;
+}

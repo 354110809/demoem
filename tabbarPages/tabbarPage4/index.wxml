@@ -1,0 +1,132 @@
+<!--pages/mine/index.wxml-->
+<!-- <wxs src="../../utils/filter.wxs" module="filter" /> -->
+<view class="tabbar4Page tabbarPage">
+   <view class="top-box">
+      <view class="t-box1">
+         <image class="image" src="https://img0.baidu.com/it/u=637079888,504226789&fm=26&fmt=auto" mode="aspectFill"></image>
+         <view class="t-box-r">
+            <view class="name">就按你说的班就按你说</view>
+            <view class="zl" bindtap="seeMyDetails">查看/编辑资料</view>
+         </view>
+         <view class="t-box-rt">
+            <view class="vector">X12</view>
+         </view>
+      </view>
+
+      <view class="t-box2">
+         <view class="t-box2-1">
+            <image class="image" src="../../images/news/icon_1.jpg"></image>
+            <view class="t-box2-r">
+               <view class="t-box2-r-1">邀请朋友脱单</view>
+               <view class="t-box2-r-2">喜欢和喜欢你的</view>
+            </view>
+         </view>
+         <view class="t-box2-2">
+            <image class="image" src="../../images/news/icon_1.jpg"></image>
+            <view class="t-box2-r">
+               <view class="t-box2-r-1">实名认证</view>
+               <view class="t-box2-r-2">增加信任度</view>
+            </view>
+         </view>
+      </view>
+
+      <view class="t-box3">
+         <view class="t-box3-1">
+            <view>1000.0 <text>元</text></view>
+            <view>活动收费</view>
+         </view>
+         <view class="t-box3-2">
+            <view>1000.0 <text>心币</text></view>
+            <view>邀请朋友</view>
+         </view>
+         <view class="t-box3-3">
+            <text>发布活动</text>
+         </view>
+      </view>
+
+   </view>
+   <!-- 定位分割行 -->
+   <view class="LocateRow"></view>
+   <!-- 下部内容区域 -->
+   <view class="bottom-box">
+      <view class="bottom-head">
+         <view class="{{showBottomIndex==1?'cur':''}}" bindtap="clickHeadTap" data-index="1"><text>我的初见</text></view>
+         <view class="{{showBottomIndex==2?'cur':''}}" bindtap="clickHeadTap" data-index="2"><text>我的活动</text></view>
+         <view class="{{showBottomIndex==3?'cur':''}}" bindtap="clickHeadTap" data-index="3"><text>好友评价</text></view>
+      </view>
+      <view class="bottom-body">
+         <!-- 我的初见 -->
+         <view hidden="{{showBottomIndex != 1}}" class="bottom-body-inner bottom-body-inner1">
+            <view wx:for="{{10}}" wx:key="index" class="item message">
+               <view class="pic" bindtap="seeDetails">
+                  <image class="image" wx:if="{{index%2 == 0}}" src="https://img2.baidu.com/it/u=2761317825,1023537553&fm=26&fmt=auto" mode="aspectFill"></image>
+                  <image class="image" wx:else src="https://img1.baidu.com/it/u=1129915480,548838391&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" mode="aspectFill" ></image>
+                  <view wx:if="{{index<4}}">信誉高</view>
+               </view>
+
+               <view class="info">
+                  <!-- 姓名年龄 -->
+                  <view class="line-name">
+                     <view class="name">王二妞妞</view>
+                     <view class="age">18岁</view>
+                     <view class="vector">X12</view>
+                  </view>
+                  <view class="text">北京|博士|清华大学|投资管理|投资管理|投资管理</view>
+               </view>
+               <view class="status">
+                  <view class="tu {{index%3 == 1 ?'cur1':index%3 == 2 ?'cur2':index%3 == 0 ?'cur3':''  }}"></view>
+                  <view>{{index%3 == 1 ?'喜欢TA':index%3 == 2 ?'喜欢我':index%3 == 0 ?'互恋':'' }}</view>
+               </view>
+            </view>
+         </view>
+         <!-- 我的活动 -->
+         <view hidden="{{showBottomIndex != 2}}" class="bottom-body-inner bottom-body-inner2">
+            <view class="item" wx:for="{{4}}" wx:key="index"  bindtap="seeHdDetails">
+               <image class="image" src="https://img2.baidu.com/it/u=2761317825,1023537553&fm=26&fmt=auto" mode="aspectFill"></image>
+               <view class="item_body_t_i">
+                  <view class="name">【官方】周末单身滑雪集训营男女1V1破冰+游戏游戏游戏游戏游戏游戏游戏游戏</view>
+                  <view class="date">时间 <text>11-25到11-27</text></view>
+                  <view class="address">地点 <text>密云南山滑雪场密云南山滑雪场密云南山滑雪场密云滑雪场</text></view>
+                  <view class="myactivity">我发布的活动</view>
+               </view>
+            </view>
+         </view>
+         <!-- 好友评价 -->
+         <view hidden="{{showBottomIndex != 3}}" class="bottom-body-inner bottom-body-inner3">
+            <view wx:for="{{3}}" wx:key="index" class="item">
+               <image class="image" src="https://img1.baidu.com/it/u=4261968998,3782325905&fm=26&fmt=auto" bindtap="seeDetails"></image>
+               <view class="item-right">
+                  <!-- 昵称-年龄-性别 -->
+                  <view class="item-right-1">昵称昵称称昵称昵称<text>28岁 | 女</text></view>
+                  <!-- 地址-学历-学校-职业 -->
+                  <view class="item-right-2">北京 | 博士 |  清华大学 | 投资管理</view>
+                  <!-- 评价星级 -->
+                  <view class="item-right-3">
+                     <block wx:if="{{index==0}}">
+                        <text>朋友给Ta的评价:</text>
+                        <evaluate_model level="5" showType="2"/>
+                     </block>
+                     <block wx:if="{{index==1}}">
+                        <text>路人给Ta的评价:</text>
+                        <evaluate_model level="3" showType="2"/>
+                     </block>
+                     <block wx:if="{{index==2}}">
+                        <text>群主给Ta的评价:</text>
+                        <evaluate_model level="3" showType="2"/>
+                     </block>
+                  </view>
+                  <!-- 评价标签 -->
+                  <view class="item-right-4 label">
+                     <text>硕士</text>
+                     <text>律师</text>
+                     <text>清华大学</text>
+                     <text>清华大学</text>
+                  </view>
+                  <!-- 评价内容 -->
+                  <view class="item-right-5">评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容</view>
+               </view>
+            </view>
+         </view>
+      </view>
+   </view>
+</view>

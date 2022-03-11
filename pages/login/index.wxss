@@ -1,0 +1,130 @@
+/* pages/login/index.wxss */
+.loginPage{
+    position: relative;
+    width:100vw;
+    min-height: 100vh;
+    background:#f4f4f4;
+    box-sizing: border-box;
+    padding:0 5.76% 20px;
+}
+image{
+    height:0px;
+}
+
+.inner .inner-model {
+    position: relative;
+    padding-top: 4.53vw;
+}
+.inner .inner-model .title-pic{
+    width:46.9%;
+    display: block;
+    margin-bottom:3vw;
+}
+.inner .inner-model .text-pic{
+    width:58.4%;
+    display: block;
+}
+.inner .inner-model .R-C-pic{
+    width:89%;
+    display: block;
+    margin-top:-6vw;
+}
+
+.loginPage .inner .inp-box{
+    background: #FFFFFF;
+    font-size: 12pt;
+    margin-bottom:30px;
+    width:100%;
+    height: 54px;
+    border-radius: 16px;
+    overflow: hidden;
+    color:#6F1F08;
+    box-sizing: border-box;
+    padding:0 6px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginPage .inner .inp-box .inputP{
+    color:#6F1F08;
+    text-indent: 2px;
+    top:-1px;
+    line-height: 54px;
+}
+.loginPage .inner .inp-box .input-icon{
+    flex:none;
+    width:30px;
+    height:54px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.loginPage .inner .inp-box .input-icon image{
+    width:16px;
+    height:21px;
+}
+.loginPage .inner .inp-box.code .input-icon image{
+    width:19px;
+    height:16px;
+}
+
+.loginPage .inner .inp-box input{
+    flex-grow: 1;
+    height:54px;
+    line-height: 54px;
+    font-size: 11.25pt;
+}
+.loginPage .inner .inp-box.code input{
+    width:110px;
+}
+.loginPage .inner .inp-box.code .code-btn{
+    color:#fff;
+    font-size: 11pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex:none;
+    width: 130px;
+    height: 44px;
+    background: #FB6766;
+    border-radius: 16px;
+}
+.loginPage .inner .inp-box .code .code-btn.cur{
+    color:#c9c9c9;
+}
+
+.loginPage .inner .inp-box-pact{
+    font-size: 10pt;
+    color: #9D7F77;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.loginPage .inner .inp-box-pact navigator,
+.pact_1Hover{
+    background:none;
+    color: #9D7F77;
+    margin-left: 5px;
+    border-bottom:1px solid #9D7F77;
+}
+.loginPage .inner .inp-box-btn{
+    color:#fff;
+    height:54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12.75pt;
+    font-weight: bold;
+    background: linear-gradient(266.37deg, #FB3A74 -14.53%, #FF6230 113.67%);
+    border-radius: 72px;
+    margin-bottom: 20px;
+}
+
+.loginPage .inner .tipText{
+    color:#9D7F77;
+    font-size: 10pt;
+    display: block;
+    margin-bottom: 45px;
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+/**app.wxss**/
+/* tabbar 页面公共样式 */
+.tabbarPage{
+   padding-bottom:48px;
+   position: relative;
+}
+.tabbarPage .body{
+   background: #eff4f7;
+   padding:8px 12px;
+   min-height: calc( 100vh - 118px );
+}
+
+/* 默认页面公共样式 */
+.defaultPage{
+   position: relative;
+}
+.defaultPage .body{
+   background: #eff4f7;
+   padding:8px 12px;
+   min-height: 100vh;
+}

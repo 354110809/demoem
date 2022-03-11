@@ -1,0 +1,85 @@
+<!--pages/user-details/index.wxml-->
+<!-- 用户详情 -->
+<view class="userDetailPage">
+   <!-- <page_head pageTitle="用户详情"/> -->
+   <view class="model-top">
+      <!-- 用户图片展示 -->
+      <view class="userPic">
+         <swiper class='swiperUserPic' duration="300" circular bindchange="swiperChange">
+            <!-- <swiper-item>
+               <video id="slide-video" class="slide-video" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" controls="{{false}}" enable-progress-gesture="{{false}}" object-fit="cover"></video>   
+            </swiper-item> -->
+            <block wx:for="{{userPic}}" wx:key="index">
+               <swiper-item>
+                  <image src="{{item}}" data-index='{{index}}'  class="slide-image" mode='aspectFill'>
+                     </image>
+               </swiper-item>
+            </block>
+            
+         </swiper>
+         <view class="swiperIndicator">
+            <text wx:for="{{userPic}}" wx:key="index" class="{{switchIndex == index?'active':''}}"></text>
+         </view>
+      </view>
+      <!-- 用户信息 -->
+      <view class="userInfo">
+         <view class="info_box">Apple 23</view>
+         <view class="info_box">女｜北京｜设计师｜硕士｜对外经贸大学</view>
+         <view class="info_box">目前就职于：新浪科技</view>
+         <view class="dbBox"></view>
+      </view>
+   </view>
+
+   <view class="model-body">
+      <!-- 用户信息切换 -->
+      <view class="tag-head">
+         <view class="tagBox_li active">我的资料</view>
+         <view class="tagBtn" bindtap="onEditFun">编辑资料</view>
+      </view>
+      <!-- 资料 -->
+      <view class="tag-inner">
+         <!-- 标签 -->
+         <view class="tag_box">
+            <text>175CM</text>
+            <text>55KG</text>
+            <text>未婚</text>
+            <text>白羊座</text>
+            <text>有车</text>
+            <text>有购房能力</text>
+            <text>内蒙古 <text>籍贯</text></text>
+         </view>
+         <!-- 我的日常 -->
+         <view class="inner_box">
+            <view class="inner_box_head">我的日常生活（兴趣爱好）</view>
+            <view class="inner_box_body">
+               <view class="li">我喜欢运动 爬山</view>
+               <view class="li">听音乐能听2~3小时</view>
+               <view class="li">抵制无效社交</view>
+            </view>
+         </view>
+         <!-- 自我评价 -->
+         <view class="inner_box">
+            <view class="inner_box_head">自我评价</view>
+            <view class="inner_box_body">
+               <view class="p">我是一个普普通通的小人物，我安于现状只想遇到一个心仪的对象，过着安安稳稳的小日子</view>
+            </view>
+         </view>
+         <!-- 另一半 -->
+         <view class="inner_box inner_box3">
+            <view class="inner_box_head">对未来另一般的留言，希望你：</view>
+            <view class="inner_box_body">
+               <view class="inner_box_body_tag_box">
+                  <text>175CM</text>
+                  <text>55KG</text>
+                  <text>未婚</text>
+                  <text>白羊座</text>
+                  <text>有车</text>
+                  <text>有购房能力</text>
+                  <text><text>籍贯</text> 内蒙古</text>
+               </view>
+               <view class="p">希望你也是踏踏实实过日子的人 不要作不要闹</view>
+            </view>
+         </view>
+      </view>
+   </view>
+</view>

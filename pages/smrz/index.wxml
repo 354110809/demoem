@@ -1,0 +1,56 @@
+<!--pages/smrz/index.wxml-->
+<view class="smrzPage">
+   <view class="top-box">
+      <view>如果您是相亲群主，认证该平台时，请实名认证</view>
+      <view>初心单身互动平台为相亲公益平台，拒绝一切非合法违规的群聚活动。合法活动，会获得本平台的积分信誉奖励。</view>
+   </view>
+
+   <view class="inp-line">
+      <view class="label">姓名</view>
+      <view class="text"><input type="text" placeholder="请输入真实的姓名" maxlength="10"/></view>
+   </view>
+
+   <view class="inp-line">
+      <view class="label">身份证账号</view>
+      <view class="text"><input type="text" placeholder="请输入身份证号" maxlength="18"/></view>
+   </view>
+
+   <view class="inp-box">
+      <!-- 身份证-正面 -->
+      <view class="pic">
+         <view class="bj" wx:if="{{!userPic.zmSrc}}" bindtap="selectPicFun" data-key="zmSrc">
+            <view class="icon"></view>
+            <view class="text">上传身份证  正面</view>
+         </view>
+         <image  wx:else class="image" data-key="zmSrc" src="{{userPic.zmSrc}}" bindtap="selectPicFun" catch:longpress="seePortrait" mode="aspectFill"></image>
+      </view>
+      <!-- 身份证-反面 -->
+      <view class="pic">
+         <view class="bj"  wx:if="{{!userPic.fmSrc}}" bindtap="selectPicFun" data-key="fmSrc">
+            <view class="icon"></view>
+            <view class="text">上传身份证  反面</view>
+         </view>
+         <image  wx:else class="image" data-key="fmSrc" src="{{userPic.fmSrc}}" bindtap="selectPicFun" catch:longpress="seePortrait"
+         mode="aspectFill"></image>
+      </view>
+   </view>
+
+   <view class="inp-line">
+      <view class="label">本人验证</view>
+   </view>
+
+   <view class="inp-box">
+      <!-- 本人照 -->
+      <view class="pic br">
+         <view class="bj" wx:if="{{!userPic.brSrc}}" bindtap="selectPicFun" data-key="brSrc">
+            <view class="icon"></view>
+            <view class="text">本人照片验证</view>
+         </view>
+         <image wx:else class="image" data-key="brSrc" src="{{userPic.brSrc}}" bindtap="selectPicFun" catch:longpress="seePortrait"
+         mode="aspectFill"></image>
+      </view>
+   </view>
+
+   <view class="inp-box-btn" bindtap="">加入初心</view>
+
+</view>

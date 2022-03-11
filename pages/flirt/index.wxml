@@ -1,0 +1,29 @@
+<!--pages/flirt/index.wxml-->
+<!-- 撩一撩 -->
+<view class="flirtPage defaultPage">
+   <view class="body">
+      <!-- 私聊消息 -->
+      <view wx:for="{{10}}" wx:key="index" class="item message" bindtap="goChat">
+            <view class="icon-pic">
+               <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1114%2F060421091316%2F210604091316-6-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1640314171&t=a278e6f23662fc454c47aeb9bb284c49" mode="aspectFill"></image>
+            </view>
+            <view class="info">
+               <!-- 姓名年龄 -->
+               <view class="line-name">
+                  <view class="name">王二妞妞</view>
+                  <view class="age">18岁</view>
+                  <view class="btn" bindtap="goChat">撩TA</view>
+               </view>
+               <!-- 标签 -->
+               <view class="label">
+                  <text>硕士</text>
+                  <text>律师</text>
+                  <text>清华大学</text>
+                  <text>清华大学</text>
+               </view>
+               <view class="text">北京|博士|清华大学|投资管理|投资管理|投资管理</view>
+            </view>
+      </view>
+   </view>
+</view>
+

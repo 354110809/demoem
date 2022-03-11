@@ -1,0 +1,51 @@
+<!--pages/indexModel/index/index.wxml-->
+<view class="tabbar1Page tabbarPage">
+   <!-- <page_head pageTitle="初见"/> -->
+   <!-- 顶部内容 -->
+   <top_model></top_model>
+   <!-- 自定义城市选择 -->
+   <!-- <view style="margin: 250rpx 0;text-align:center;font-size:50rpx;">选择的城市: {{city.name}}</view> -->
+  <!-- <button style="width: 60%;" type="primary" bindtap="selectCity">选择城市</button> -->
+   <!-- 内容部分 -->
+   <view class="body">
+      <!-- 活动banner -->
+      <view class="activityBanner" bindtap="seeHdDetails">
+         <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic32.nipic.com%2F20130829%2F13499193_160436018345_2.jpg&refer=http%3A%2F%2Fpic32.nipic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1640152807&t=43b08da60d3aa0d7fb942ae65d1beed1"></image>
+         <view class="nameActivity">【官方】周末单身滑雪集训营男女1V1   11月22日</view>
+      </view>
+
+      <view class="title-box">
+         <text>初见·</text>人生若只如初见
+      </view>
+      <!-- 平台用户列表 -->
+      <view class="platformUserList">
+         <view class="item" wx:for="{{29}}" wx:key="index" bindtap="seeDetails">
+            <view class="top-pic">
+               <image mode="aspectFill" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201906%2F28%2F20190628133105_Gi5dC.thumb.400_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1640161321&t=0bc8a84141f880f241ec4e8184694c2e"></image>
+               <view class="top-pic-info">
+                  <view class="vector" catch:tap="spotPraiseFun">X12</view>
+                  <view class="make">信誉高</view>
+               </view>
+            </view>
+            <view class="bottom-info">
+               <view class="inner">
+                  <!-- 姓名/年龄/性别 -->
+                  <view class="infoLine">
+                     <view class="name">马可哈和哈</view>
+                     <view class="ageGender">38岁|女</view>
+                  </view>
+                  <!-- 标签 -->
+                  <view class="label">
+                     <text>硕士</text>
+                     <text>律师</text>
+                     <text>清华大学</text>
+                     <text>清华大学</text>
+                  </view>
+                  <!-- 地址 -->
+                  <view class="place">北京 海淀淀海淀海淀海淀海淀</view>
+               </view>
+            </view>
+         </view>
+      </view>
+   </view>
+</view>

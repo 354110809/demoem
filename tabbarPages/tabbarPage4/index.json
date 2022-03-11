@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "evaluate_model": "/components/evaluate_model/index"
+    },
+    "navigationBarTitleText": "我的"
+}

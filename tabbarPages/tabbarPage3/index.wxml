@@ -1,0 +1,63 @@
+<!--tabbarPages/activity/index.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="tabbar3Page tabbarPage">
+   <!-- 顶部内容 -->
+   <top_model showShadow="{{!isUnpaidActivity}}"></top_model>
+   <!-- 活动付款提示 -->
+   <view class="tips_model" wx:if="{{isUnpaidActivity}}">
+      <view class="inner">
+         <view class="icon"></view>
+         您的活动暂未支付，请及时支付
+         <view class="btn">去支付</view>
+      </view>
+   </view>
+   <!-- 活动列表 -->
+   <view class="body {{isUnpaidActivity?'cur':''}}">
+      <view class="activity" wx:for="{{15}}" wx:key="index">
+         <view class="item">
+            <view class="item_head">
+               <!-- {{filter.getBeforeDateSection('2021-12-1 23:59') }} -->
+               <view class="dateStr">今天</view>
+               <view class="date">（11-30）</view>
+               <view class="type">户外运动</view>
+            </view>
+            <view class="item_body">
+               <view class="item_body_t" bindtap="seeHdDetails">
+                  <image class="image" src="https://img2.baidu.com/it/u=2761317825,1023537553&fm=26&fmt=auto" mode="aspectFill"></image>
+                  <view class="item_body_t_i">
+                     <view class="name">【官方】周末单身滑雪集训营男女1V1破冰+游戏</view>
+                     <view class="date">时间 <text>11-25到11-27</text></view>
+                     <view class="address">地点 <text>密云南山滑雪场</text></view>
+                  </view>
+               </view>
+               <view class="item_body_b">
+                  <view class="item_body_b_li">
+                     <view class="text">正在报名</view>
+                     <view class="info bm">1/30</view>
+                  </view>
+                  <view class="item_body_b_li">
+                     <view class="text">组织者</view>
+                     <view class="info zzz" bindtap="seeDetails">
+                        <image class="image" src="https://img2.baidu.com/it/u=2761317825,1023537553&fm=26&fmt=auto" mode="aspectFill"></image>
+                        <view>组织者组织者组织者</view>
+                     </view>
+                  </view>
+                  <view class="item_body_b_li">
+                     <view class="text">已报名会员</view>
+                     <view class="info cy">
+                        <image  bindtap="seeDetails" wx:for="{{8}}" wx:key="index"  wx:if="{{index < 5}}"class="image" src="https://img2.baidu.com/it/u=2761317825,1023537553&fm=26&fmt=auto" mode="aspectFill"></image>
+                     </view>
+                  </view>
+               </view>
+            </view>
+            <view class="item_foter">
+               <!-- <view class="btn">立即报名</view> -->
+               <view class="btn see" bindtap="seeHdDetails">查看详情</view>
+            </view>
+         </view>
+      </view>   
+   </view>
+   <!-- 发布活动按钮 -->
+   <view class="release-btn">我要也发布活动</view>
+   
+</view>

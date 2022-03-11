@@ -1,0 +1,5 @@
+<!--components/page_head/index.wxml-->
+<!-- "navigationStyle":"custom" -->
+<view class="pageHead" style="height:{{barHeight}}px;padding-top:{{barPaddingTop}}px">
+   {{pageTitle||'初见'}}
+</view>
